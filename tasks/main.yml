@@ -1,0 +1,15 @@
+---
+# tasks file for repo_postgresql
+- name: Ensure postgresql repository is available
+  tags: repo_postgresql
+  copy: 
+    src: 'pgdg-centos.repo.j2'
+    dest: '/etc/yum.repos.d/{{ "pgdg-" + repo_postgresql_version_stripped + "-centos.repo" }}'
+
+- name: Loading postgresql repository gpg keys
+  tags: repo_postgresql
+  copy: 
+    src: '{{ "RPM-GPG-KEY-PGDG-" + repo_postgresql_version_stripped }}' 
+    dest: '/etc/pki/rpm-gpg/'
+
+

@@ -1,0 +1,17 @@
+# {{ ansible_managed }}
+
+[pgdg{{ repo_postgresql_version_stripped }}]
+name=PostgreSQL {{ repo_postgresql_version }} $releasever - $basearch
+baseurl=https://download.postgresql.org/pub/repos/yum/{{ repo_postgresql_version }}/redhat/rhel-$releasever-$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-{{ repo_postgresql_version_stripped }}
+
+[pgdg{{ repo_postgresql_version_stripped }}-source]
+name=PostgreSQL {{ repo_postgresql_version }} $releasever - $basearch - Source
+failovermethod=priority
+baseurl=https://download.postgresql.org/pub/repos/yum/srpms/{{ repo_postgresql_version }}/redhat/rhel-$releasever-$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-{{ repo_postgresql_version_stripped }}
+
