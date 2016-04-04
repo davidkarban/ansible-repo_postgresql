@@ -12,4 +12,3 @@
     src: '{{ "RPM-GPG-KEY-PGDG-" + repo_postgresql_version_stripped }}' 
     dest: '/etc/pki/rpm-gpg/'
 
-

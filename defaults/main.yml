@@ -2,4 +2,4 @@
 # defaults file for repo_postgresql
 
 repo_postgresql_version: '9.5'
-repo_postgresql_version_stripped: "{{ repo_postgresql_version|regex_replace('^([0-9])\.([0-9])$', '\\1\\2') }}'
+repo_postgresql_version_stripped: "{{ repo_postgresql_version|regex_replace('^([0-9])\.([0-9])$', '\\1\\2') }}"
